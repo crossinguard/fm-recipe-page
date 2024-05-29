@@ -1,5 +1,4 @@
 ---
-import Social from './Social.astro';
 import Attribution from './Attribution.astro';
 
 interface Author {
@@ -16,7 +15,6 @@ const today = new Date();
   <div class="flex">
     <p>{author.name} &copy; {today.getFullYear()}</p>
     <p class="curious">stay curious</p>
-    <Social />
   </div>
 </footer>
 <style>
