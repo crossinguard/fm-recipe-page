@@ -1,0 +1,46 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-VariableFont_slnt,wght.ttf')
+    format('truetype-variations');
+  src: url('/fonts/static/Inter-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-VariableFont_slnt,wght.ttf')
+    format('truetype-variations');
+  src: url('/fonts/static/Inter-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-VariableFont_slnt,wght.ttf')
+    format('truetype-variations');
+  src: url('/fonts/static/Inter-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+:root {
+  /* DESIGN ELEMENTS */
+  --green: hsl(75, 94%, 57%);
+  --white: hsl(0, 0%, 100%);
+  --gray: hsl(0, 0%, 20%);
+  --gray-dark: hsl(0, 0%, 12%);
+  --black: hsl(0, 0%, 8%);
+  --font-size: 0.875rem;
+  --mobile-size: 375px;
+  --desktop-size: 1440px;
+  --font-family: 'Inter', monospace;
+  --transition: 0.2s ease-in-out;
+  --primary: var(--green);
+  --secondary: var(--gray);
+  --tertiary: var(--white);
+}
+html {
+  font-size: 100%;
+}
+body {
+  font-family: var(--font-family);
+  background-color: var(--black);
+  color: var(--white);
+}

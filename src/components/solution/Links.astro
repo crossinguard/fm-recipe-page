@@ -1,0 +1,62 @@
+---
+interface Link {
+  label: string;
+  link: string;
+}
+
+const links: Link[] = [
+  {
+    label: 'Professional Profile',
+    link: 'https://crossinguard.dev/',
+  },
+  {
+    label: 'GitHub',
+    link: 'https://github.com/crossinguard',
+  },
+  {
+    label: 'Frontend Mentor',
+    link: 'https://www.frontendmentor.io/profile/crossinguard',
+  },
+  {
+    label: 'LinkedIn',
+    link: 'https://www.linkedin.com/in/w-brett-egbert/',
+  },
+];
+---
+
+<ul class="link-list">
+  {
+    links.map((link) => (
+      <li>
+        <a href={link.link} target="_blank" class="link body-bold">
+          {link.label}
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .link-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+  }
+  .link {
+    display: inline-block;
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    background-color: var(--gray);
+    color: var(--white);
+    transition: all var(--transition);
+  }
+  .link:hover {
+    color: var(--gray);
+    background-color: var(--primary);
+  }
+</style>

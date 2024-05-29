@@ -1,0 +1,91 @@
+---
+interface Challenge {
+  name: string;
+  challenge_url: string;
+  frontendmentor_url: string;
+}
+interface Solution {
+  github_url: string;
+  repository: string;
+}
+interface Author {
+  name: string;
+  handle: string;
+}
+interface Website {
+  url: string;
+}
+
+import site from '../assets/data/site.json';
+const {
+  challenge,
+  solution,
+  author,
+  website,
+}: {
+  challenge: Challenge;
+  solution: Solution;
+  author: Author;
+  website: Website;
+} = site;
+---
+
+<div class="attribution">
+  <div class="challenge">
+    <a href={challenge.challenge_url} target="_blank">
+      {challenge.name} challenge
+    </a>
+    <p>by</p>
+    <a href={challenge.frontendmentor_url} target="_blank"> Frontend Mentor </a>
+  </div>
+  <div class="solution">
+    <a
+      href=`${solution.github_url}/${author.handle}/${solution.repository}`
+      target="_blank"
+    >
+      Solution
+    </a>
+    <p>by</p>
+    <a href={website.url} target="_blank">
+      {author.name}
+    </a>
+  </div>
+</div>
+
+<style>
+  .attribution {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    width: fit-content;
+    margin-inline: auto;
+    font-family: monospace;
+    border: dotted var(--gray);
+    padding: 1em;
+    border-radius: 1em;
+    margin-block-start: 2em;
+    text-align: center;
+
+    p {
+      display: inline-block;
+      padding: 0;
+    }
+    a {
+      display: inline-block;
+      color: var(--tertiary);
+      text-decoration: none;
+      border: solid thin var(--secondary);
+      border-radius: 0.4rem;
+      padding-inline: 0.4em;
+      margin-block: 0.1rem;
+      transition: all var(--transition);
+
+      &:hover {
+        color: var(--primary);
+        border-color: var(--primary);
+      }
+    }
+  }
+</style>

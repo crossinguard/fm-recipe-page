@@ -1,0 +1,39 @@
+---
+import Social from './Social.astro';
+import Attribution from './Attribution.astro';
+
+interface Author {
+  name: string;
+}
+
+import site from '../assets/data/site.json';
+const { author }: { author: Author } = site;
+const today = new Date();
+---
+
+<footer>
+  <Attribution />
+  <div class="flex">
+    <p>{author.name} &copy; {today.getFullYear()}</p>
+    <p class="curious">stay curious</p>
+    <Social />
+  </div>
+</footer>
+<style>
+  footer {
+    border-block-start: solid var(--gray);
+    margin-block-start: 2em;
+  }
+  .flex {
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    margin-block: 3em;
+    text-align: center;
+  }
+
+  .curious {
+    font-size: smaller;
+    font-style: italic;
+  }
+</style>

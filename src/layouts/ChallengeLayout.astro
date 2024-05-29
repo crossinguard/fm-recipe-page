@@ -1,0 +1,56 @@
+---
+import Footer from '../components/Footer.astro';
+
+import '../styles/reset.css';
+import '../styles/utils.css';
+import '../styles/global.css';
+
+interface Website {
+  title: string;
+  description: string;
+  language: string;
+}
+interface Challenge {
+  name: string;
+}
+
+import site from '../assets/data/site.json';
+const { website, challenge }: { website: Website; challenge: Challenge } = site;
+---
+
+<html lang={website.language}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      property="og:description"
+      content={website.description}
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>{challenge.name} | {website.title}</title>
+  </head>
+
+  <body>
+    <main id="main-grid">
+      <h1 class="sr-only">{challenge.name}</h1>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  #main-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+</style>
