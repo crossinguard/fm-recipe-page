@@ -1,0 +1,90 @@
+---
+import { Image } from 'astro:assets';
+
+interface RecipeInfo {
+  image: string;
+  alt: string;
+  name: string;
+  description: string;
+  preparation: Preparation[];
+}
+interface Preparation {
+  label: string;
+  details: string;
+}
+
+const { image, alt, name, description, preparation }: RecipeInfo = {
+  image: 'image-omelette',
+  alt: 'golden omelette filled with diced vegetables, cooked meats, and herbs',
+  name: 'Simple Omelette Recipe',
+  description:
+    'An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to perfection, optionally filled with your choice of cheese, vegetables, or meats.',
+  preparation: [
+    {
+      label: 'Total',
+      details: 'Approximately 10 minutes',
+    },
+    {
+      label: 'Preparation',
+      details: '5 minutes',
+    },
+    {
+      label: 'Cooking',
+      details: '5 minutes',
+    },
+  ],
+};
+---
+
+<div class="recipe-image">
+  <Image src={import(`../../assets/images/${image}.jpeg`)} alt={alt} />
+</div>
+<div class="recipe-header">
+  <h1 class="recipe-name heading-l">{name}</h1>
+  <p class="recipe-description body-regular">{description}</p>
+</div>
+<div class="recipe-preparation">
+  <h2 class="heading-s">Preparation time</h2>
+  <ul class="prep-list">
+    {
+      preparation.map(({ label, details }) => (
+        <li class="prep-step">
+          <span class="body-bold">{label}</span>: {details}
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+  .recipe-image {
+    max-height: 18.75rem;
+    margin-block-end: 2.5rem;
+    img {
+      border-radius: 0.75rem;
+      height: 100%;
+    }
+  }
+  .recipe-name {
+    margin-block-end: 1.5rem;
+    line-height: 1;
+  }
+  .recipe-preparation {
+    padding: 1.75rem;
+    margin-block: 2rem;
+    background-color: var(--snow);
+    border-radius: 0.75rem;
+    h2 {
+      margin-block-end: 1rem;
+    }
+  }
+  .prep-list {
+    padding-inline-start: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .prep-step {
+    padding-inline-start: 1.25rem;
+  }
+</style>

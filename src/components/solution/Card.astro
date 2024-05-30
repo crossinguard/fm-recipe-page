@@ -1,52 +1,20 @@
 ---
-import Image from 'astro/components/Image.astro';
-import Links from '../solution/Links.astro';
-import logo from '../../assets/images/crystal-logo.svg';
-
-interface CardInfo {
-  name: string;
-  location: string;
-  about: string;
-}
-
-const { name, location, about }: CardInfo = {
-  name: 'W. Brett Egbert',
-  location: 'Whatcom County, Washington',
-  about: '"mathematics educator, assessment specialist, web developer"',
-};
+import RecipeHeader from './RecipeHeader.astro';
 ---
 
 <div class="card">
-  <div class="profile-pic">
-    <Image
-      src={logo}
-      alt="crossinguard logo showing a green crystal against a radically retro sun"
-      width="88"
-      height="88"
-    />
-  </div>
-  <div class="name-location">
-    <h2 class="name heading">{name}</h2>
-    <p class="location body-bold">{location}</p>
-  </div>
-  <div class="bio body-regular">
-    {about}
-  </div>
-  <Links />
+  <RecipeHeader />
+  <div class="ingredients"></div>
+  <div class="instructions"></div>
+  <div class="nutrition"></div>
 </div>
 
 <style>
   .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    text-align: center;
-    background-color: var(--gray-dark);
-    max-width: 24rem;
+    background-color: var(--white);
+    max-width: 46rem;
     padding: 2.5rem;
-    margin-inline: 1.5rem;
-    border-radius: 0.75rem;
+    border-radius: 1.5rem;
   }
   .location {
     color: var(--primary);

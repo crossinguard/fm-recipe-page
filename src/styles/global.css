@@ -1,46 +1,30 @@
-/* @font-face {
-  font-family: 'Inter';
-  src: url('/fonts/Inter-VariableFont_slnt,wght.ttf')
-    format('truetype-variations');
-  src: url('/fonts/static/Inter-Regular.ttf') format('truetype');
-  font-weight: 400;
-}
-@font-face {
-  font-family: 'Inter';
-  src: url('/fonts/Inter-VariableFont_slnt,wght.ttf')
-    format('truetype-variations');
-  src: url('/fonts/static/Inter-SemiBold.ttf') format('truetype');
-  font-weight: 600;
-}
-@font-face {
-  font-family: 'Inter';
-  src: url('/fonts/Inter-VariableFont_slnt,wght.ttf')
-    format('truetype-variations');
-  src: url('/fonts/static/Inter-Bold.ttf') format('truetype');
-  font-weight: 700;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap');
 
 :root {
   /* DESIGN ELEMENTS */
-  --green: hsl(75, 94%, 57%);
   --white: hsl(0, 0%, 100%);
-  --gray: hsl(0, 0%, 20%);
-  --gray-dark: hsl(0, 0%, 12%);
-  --black: hsl(0, 0%, 8%);
-  --font-size: 0.875rem;
-  --mobile-size: 375px;
-  --desktop-size: 1440px;
-  --font-family: 'Inter', monospace;
+  --snow: hsl(330, 100%, 98%);
+  --white-coffee: hsl(30, 18%, 87%);
+  --eggshell: hsl(30, 54%, 90%);
+  --wenge-brown: hsl(30, 10%, 34%);
+  --brandy-red: hsl(14, 45%, 36%);
+  --dark-raspberry: hsl(332, 51%, 32%);
+  --dark-charcoal: hsl(24, 5%, 18%);
+
+  --font-size: 1rem;
+  --font-family-fancy: 'Young Serif', serif;
+  --font-family: 'Outfit', sans-serif;
   --transition: 0.2s ease-in-out;
-  --primary: var(--green);
-  --secondary: var(--gray);
-  --tertiary: var(--white);
+  --primary: var(--dark-raspberry);
+  --secondary: var(--brandy-red);
+  --tertiary: var(--wenge-brown);
 }
 html {
   font-size: 100%;
 }
 body {
+  font-size: var(--font-size);
   font-family: var(--font-family);
-  background-color: var(--black);
-  color: var(--white);
+  background-color: var(--eggshell);
+  color: var(--wenge-brown);
 }
