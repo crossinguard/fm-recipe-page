@@ -1,0 +1,76 @@
+---
+interface RecipeInfo {
+  nutrition: Nutrition[];
+}
+interface Nutrition {
+  label: string;
+  value: string;
+}
+const { nutrition }: RecipeInfo = {
+  nutrition: [
+    {
+      label: 'Calories',
+      value: '227kcal',
+    },
+    {
+      label: 'Carbs',
+      value: '0g',
+    },
+    {
+      label: 'Protein',
+      value: '20g',
+    },
+    {
+      label: 'Fat',
+      value: '22g',
+    },
+  ],
+};
+---
+
+<div class="nutrition">
+  <h2 class="heading-m heading">Nutrition</h2>
+  <p class="info">
+    The table below shows nutritional values per serving without the additional
+    fillings.
+  </p>
+  <table class="nutrition-table">
+    <tbody>
+      {
+        nutrition.map(({ label, value }) => (
+          <tr class="nutrition-row">
+            <td class="label body-regular">{label}</td>
+            <td class="value body-bold">{value}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .info {
+    margin-block: 1.5rem;
+  }
+  .nutrition-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .nutrition-row {
+    border-block-end: 1px solid var(--white-coffee);
+  }
+  .nutrition-row:last-of-type {
+    border-block-end: none;
+  }
+  td {
+    width: 18rem;
+    padding-block: 0.75rem;
+  }
+  .label {
+    padding-inline: 2rem 1rem;
+  }
+  .value {
+    color: var(--brandy-red);
+    padding-inline-end: 2rem;
+  }
+</style>

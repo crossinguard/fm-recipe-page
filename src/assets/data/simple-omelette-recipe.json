@@ -17,17 +17,22 @@
   ],
   "ingredients": [
     {
-      "ingredient": "eggs",
       "quantity": "2-3",
+      "ingredient": "eggs",
+      "style": "",
       "unit": "large"
     },
     {
+      "quantity": "",
       "ingredient": "salt",
-      "style": "to taste"
+      "style": "to taste",
+      "unit": ""
     },
     {
+      "quantity": "",
       "ingredient": "pepper",
-      "style": "to taste"
+      "style": "to taste",
+      "unit": ""
     }
   ],
   "optional-ingredients": {

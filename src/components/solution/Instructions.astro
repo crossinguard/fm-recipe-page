@@ -1,0 +1,65 @@
+---
+interface RecipeInfo {
+  instructions: Instructions[];
+}
+interface Instructions {
+  label: string;
+  directions: string;
+}
+
+const { instructions }: RecipeInfo = {
+  instructions: [
+    {
+      label: 'Beat the eggs',
+      directions:
+        'In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. You can add a tablespoon of water or milk for a fluffier texture.',
+    },
+    {
+      label: 'Heat the pan',
+      directions:
+        'Place a non-stick frying pan over medium heat and add butter or oil.',
+    },
+    {
+      label: 'Cook the omelette',
+      directions:
+        'Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure the eggs evenly coat the surface.',
+    },
+    {
+      label: 'Add fillings (optional)',
+      directions:
+        'When the eggs begin to set at the edges but are still slightly runny in the middle, sprinkle your chosen fillings over one half of the omelette.',
+    },
+    {
+      label: 'Fold and serve',
+      directions:
+        'As the omelette continues to cook, carefully lift one edge and fold it over the fillings. Let it cook for another minute, then slide it onto a plate.',
+    },
+    {
+      label: 'Enjoy',
+      directions: 'Serve hot, with additional salt and pepper if needed.',
+    },
+  ],
+};
+---
+
+<div class="instructions">
+  <h2 class="heading-m heading">Instructions</h2>
+  <ol class="instructions-list list">
+    {
+      instructions.map(({ label, directions }) => (
+        <li class="prep-step">
+          <span class="body-bold">{label}</span>: {directions}
+        </li>
+      ))
+    }
+  </ol>
+</div>
+
+<style>
+  .heading {
+    margin-block-end: 1.5rem;
+  }
+  li::marker {
+    font-weight: 700;
+  }
+</style>

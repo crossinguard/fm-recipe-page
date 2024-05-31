@@ -6,14 +6,18 @@
   font-family: var(--font-family-fancy);
   font-size: 2.5rem;
   color: var(--dark-charcoal);
+  line-height: 1;
 }
 .heading-m {
   font-family: var(--font-family-fancy);
   font-size: 1.75rem;
+  color: var(--brandy-red);
+  line-height: 1;
 }
 .heading-s {
   font-size: 1.25rem;
   color: var(--dark-raspberry);
+  line-height: 1;
 }
 .body-regular {
   font-weight: 400;
@@ -22,6 +26,22 @@
 .body-bold {
   font-weight: 700;
   line-height: 1.5;
+}
+.list {
+  padding-inline-start: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  li {
+    padding-inline-start: 1.25rem;
+  }
+  li::marker {
+    color: var(--brandy-red);
+  }
+}
+.thematic-break {
+  border-block-start: 1px solid var(--white-coffee);
+  margin-block: 2rem;
 }
 .sr-only:not(:focus):not(:active) {
   clip: rect(0 0 0 0);

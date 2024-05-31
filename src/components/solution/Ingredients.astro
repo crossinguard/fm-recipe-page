@@ -1,0 +1,37 @@
+---
+interface RecipeInfo {
+  ingredients: string[];
+}
+
+const { ingredients }: RecipeInfo = {
+  ingredients: [
+    '2-3 large eggs',
+    'Salt, to taste',
+    'Pepper, to taste',
+    '1 tablespoon of butter or oil',
+    'Optional fillings: cheese, diced vegetables, cooked meats, herbs',
+  ],
+};
+---
+
+<div class="ingredients">
+  <h2 class="heading-m heading">Ingredients</h2>
+  <ul class="ingredients-list list">
+    {ingredients.map((item) => <li class="ingredient-entry">{item}</li>)}
+  </ul>
+</div>
+
+<style>
+  .heading {
+    margin-block-end: 0.5rem;
+  }
+  /* .ingredients-list {
+    padding-inline-start: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .ingredient-entry {
+    padding-inline-start: 1.25rem;
+  } */
+</style>
