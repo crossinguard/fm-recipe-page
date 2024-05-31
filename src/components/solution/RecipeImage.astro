@@ -1,0 +1,36 @@
+---
+import { Image } from 'astro:assets';
+
+interface RecipeInfo {
+  image: string;
+  alt: string;
+}
+const { image, alt }: RecipeInfo = {
+  image: 'image-omelette',
+  alt: 'golden omelette filled with diced vegetables, cooked meats, and herbs',
+};
+---
+
+<div class="image-container">
+  <Image src={import(`../../assets/images/${image}.jpeg`)} alt={alt} />
+</div>
+
+<style>
+  .image-container {
+    container-type: inline-size;
+    container-name: image;
+  }
+  img {
+    height: 100%;
+    max-height: 18.75rem;
+    height: 100%;
+    width: auto;
+    margin-inline: auto;
+  }
+  @container image (width >= 41rem) {
+    img {
+      border-radius: 0.75rem;
+      margin-block-start: 2.5rem;
+    }
+  }
+</style>

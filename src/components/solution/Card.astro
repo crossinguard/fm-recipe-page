@@ -1,24 +1,39 @@
 ---
+import RecipeImage from './RecipeImage.astro';
 import RecipeHeader from './RecipeHeader.astro';
 import Ingredients from './Ingredients.astro';
 import Instructions from './Instructions.astro';
 import Nutrition from './Nutrition.astro';
 ---
 
-<div class="card">
-  <RecipeHeader />
-  <Ingredients />
-  <div class="thematic-break"></div>
-  <Instructions />
-  <div class="thematic-break"></div>
-  <Nutrition />
+<div class="card-container">
+  <div class="card">
+    <RecipeImage />
+    <article class="recipe-text">
+      <RecipeHeader />
+      <Ingredients />
+      <div class="thematic-break"></div>
+      <Instructions />
+      <div class="thematic-break"></div>
+      <Nutrition />
+    </article>
+  </div>
 </div>
 
 <style>
   .card {
     background-color: var(--white);
     max-width: 46rem;
-    padding: 2.5rem;
-    border-radius: 1.5rem;
+  }
+  @media (width >= 47rem) {
+    .card {
+      border-radius: 1.5rem;
+    }
+  }
+  .recipe-text {
+    margin-block-start: 2.5rem;
+    padding-inline: 2rem;
+    padding-inline: clamp(2rem, 2vw + 1.5rem, 2.5rem);
+    padding-block-end: 2.5rem;
   }
 </style>

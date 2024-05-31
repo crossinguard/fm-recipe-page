@@ -1,9 +1,5 @@
 ---
-import { Image } from 'astro:assets';
-
 interface RecipeInfo {
-  image: string;
-  alt: string;
   name: string;
   description: string;
   preparation: Preparation[];
@@ -13,9 +9,7 @@ interface Preparation {
   details: string;
 }
 
-const { image, alt, name, description, preparation }: RecipeInfo = {
-  image: 'image-omelette',
-  alt: 'golden omelette filled with diced vegetables, cooked meats, and herbs',
+const { name, description, preparation }: RecipeInfo = {
   name: 'Simple Omelette Recipe',
   description:
     'An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to perfection, optionally filled with your choice of cheese, vegetables, or meats.',
@@ -36,35 +30,24 @@ const { image, alt, name, description, preparation }: RecipeInfo = {
 };
 ---
 
-<div class="recipe-image">
-  <Image src={import(`../../assets/images/${image}.jpeg`)} alt={alt} />
-</div>
-<div class="recipe-header">
+<section id="recipe-overview">
   <h1 class="recipe-name heading-l">{name}</h1>
   <p class="recipe-description body-regular">{description}</p>
-</div>
-<div class="recipe-preparation">
-  <h2 class="heading-s">Preparation time</h2>
-  <ul class="prep-list list">
-    {
-      preparation.map(({ label, details }) => (
-        <li class="prep-step">
-          <span class="body-bold">{label}</span>: {details}
-        </li>
-      ))
-    }
-  </ul>
-</div>
+  <div class="recipe-preparation">
+    <h2 class="heading-s">Preparation time</h2>
+    <ul class="prep-list list">
+      {
+        preparation.map(({ label, details }) => (
+          <li class="prep-step">
+            <span class="body-bold">{label}</span>: {details}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
 
 <style>
-  .recipe-image {
-    max-height: 18.75rem;
-    margin-block-end: 2.5rem;
-    img {
-      border-radius: 0.75rem;
-      height: 100%;
-    }
-  }
   .recipe-name {
     margin-block-end: 1.5rem;
   }
