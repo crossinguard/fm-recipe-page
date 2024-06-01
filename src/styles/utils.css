@@ -8,17 +8,20 @@
   font-size: clamp(2.25rem, 1vw + 2rem, 2.5rem);
   color: var(--dark-charcoal);
   line-height: 1;
+  font-weight: 400;
 }
 .heading-m {
   font-family: var(--font-family-fancy);
   font-size: 1.75rem;
   color: var(--brandy-red);
   line-height: 1;
+  font-weight: 400;
 }
 .heading-s {
   font-size: 1.25rem;
   color: var(--dark-raspberry);
   line-height: 1;
+  font-weight: 600;
 }
 .body-regular {
   font-weight: 400;

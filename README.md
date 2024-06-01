@@ -87,6 +87,7 @@ Additionally, I created utility classes based on the style guidelines for variou
   font-size: clamp(2.25rem, 1vw + 2rem, 2.5rem);
   color: var(--dark-charcoal);
   line-height: 1;
+  font-weight: 400;
 }
 ```
 
