@@ -67,14 +67,14 @@ I then built out the `Card.astro` primary component using my helper components. 
 ```html
 <div class="card">
   <RecipeImage />
-  <article class="recipe-text">
+  <div class="recipe-text">
     <RecipeHeader />
     <Ingredients />
     <div class="thematic-break"></div>
     <Instructions />
     <div class="thematic-break"></div>
     <Nutrition />
-  </article>
+  </div>
 </div>
 ```
 
